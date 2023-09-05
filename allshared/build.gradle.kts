@@ -14,8 +14,6 @@ kotlin {
     sourceSets {
         val commonMain by getting {
             dependencies {
-                implementation(project(":breeds"))
-                api(project(":analytics"))
             }
         }
         val commonTest by getting {
@@ -34,13 +32,11 @@ kotlin {
     }
 
     cocoapods {
-        summary = "KMMBridgeKickStart sample"
-        homepage = "https://www.touchlab.co"
+        summary = "9Folders KMM Foundation"
+        homepage = "https://rework.so"
         ios.deploymentTarget = "13.5"
-        extraSpecAttributes["libraries"] = "'c++', 'sqlite3'"
-
+        extraSpecAttributes["libraries"] = "'c++'"
         framework {
-            export(project(":analytics"))
             isStatic = true
         }
     }
@@ -51,9 +47,5 @@ addGithubPackagesRepository()
 kmmbridge {
     mavenPublishArtifacts()
     githubReleaseVersions()
-//    Android version is not automatically incremented in KMMBridge, so if you need it to be aligned with the iOS version
-//    use manualVersions instead of githubReleaseVersions to set version manually
-//    manualVersions()
     spm()
-//    cocoapods("git@github.com:9folders-inchan/kmp_sendbox.git")
 }
