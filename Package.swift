@@ -2,7 +2,7 @@
 import PackageDescription
 
 // BEGIN KMMBRIDGE VARIABLES BLOCK (do not edit)
-let remoteKotlinUrl = "https://maven.pkg.github.com/9folders-inchan/kmp_sendbox/com/9folders/kmp/sendbox/allshared-kmmbridge/0.1.9/allshared-kmmbridge-0.1.9.zip"
+let remoteKotlinUrl = "https://maven.pkg.github.com/9folders-inchan/kmp_sendbox/com/9folders/kmp/sendbox/allshared-kmmbridge/0.1.11/allshared-kmmbridge-0.1.11.zip"
 let remoteKotlinChecksum = "d5cb5f446c71e2b47a1a8e799309113169ae0de3cecb6a79e58f774b5da477b4"
 let packageName = "allshared"
 // END KMMBRIDGE BLOCK
@@ -18,6 +18,9 @@ let package = Package(
             targets: [packageName]
         ),
     ],
+    dependencies: [
+        .package(url: "https://github.com/Alamofire/Alamofire.git", .upToNextMajor(from: "5.0.0")),
+    ],
     targets: [
         .binaryTarget(
             name: packageName,
@@ -26,4 +29,5 @@ let package = Package(
         )
         ,
     ]
+
 )
