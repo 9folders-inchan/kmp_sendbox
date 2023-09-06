@@ -2,7 +2,7 @@
 import PackageDescription
 
 // BEGIN KMMBRIDGE VARIABLES BLOCK (do not edit)
-let remoteKotlinUrl = "https://maven.pkg.github.com/9folders-inchan/kmp_sendbox/com/9folders/kmp/sendbox/allshared-kmmbridge/0.1.37/allshared-kmmbridge-0.1.37.zip"
+let remoteKotlinUrl = "https://maven.pkg.github.com/9folders-inchan/kmp_sendbox/com/9folders/kmp/sendbox/allshared-kmmbridge/0.1.38/allshared-kmmbridge-0.1.38.zip"
 let remoteKotlinChecksum = "b08fde4bb0a7033833962075827da26a62e143031a1e209b1798db91aa20214a"
 let packageName = "allshared"
 // END KMMBRIDGE BLOCK
@@ -15,7 +15,7 @@ let package = Package(
     products: [
         .library(
             name: packageName,
-            targets: [packageName]
+            targets: ["DependencyTarget"]
         ),
     ],
     dependencies: [
@@ -26,6 +26,19 @@ let package = Package(
             name: packageName,
             url: remoteKotlinUrl,
             checksum: remoteKotlinChecksum
-        )
+        ),
+        .target(
+              name: "DependencyTarget",
+              dependencies: [.target(name: "Wrapper",
+                                     condition: .when(platforms: [.iOS]))]
+            ),
+        .target(
+              name: "DependencyWrapper",
+              dependencies: [
+                .target(name: packageName, condition: .when(platforms: [.iOS])),
+                .product(name: "Alamofire", package: "Alamofire")
+              ]
+            ),
+
     ]
 )
