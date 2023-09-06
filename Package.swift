@@ -25,8 +25,8 @@ let package = Package(
     targets: [
         .binaryTarget(
             name: packageName,
-            path: "./allshared/build/XCFrameworks/debug/\(packageName).xcframework"
+            url: remoteKotlinUrl,
+            checksum: remoteKotlinChecksum
         )
     ]
-
 )
