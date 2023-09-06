@@ -4,6 +4,7 @@ import PackageDescription
 // BEGIN KMMBRIDGE VARIABLES BLOCK (do not edit)
 let remoteKotlinUrl = "https://maven.pkg.github.com/9folders-inchan/kmp_sendbox/com/9folders/kmp/sendbox/allshared-kmmbridge/0.1.23/allshared-kmmbridge-0.1.23.zip"
 let remoteKotlinChecksum = "b87e21f427d4c8cf97084772047e9cfb5ab95cb9dc5d56471c01c2047d4c7fef"
+// END KMMBRIDGE BLOCK
 
 let packageName = "allshared"
 
