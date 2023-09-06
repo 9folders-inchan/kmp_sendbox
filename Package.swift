@@ -2,30 +2,7 @@
 import PackageDescription
 
 // BEGIN KMMBRIDGE VARIABLES BLOCK (do not edit)
-let remoteKotlinUrl = "https://maven.pkg.github.com/9folders-inchan/kmp_sendbox/com/9folders/kmp/sendbox/allshared-kmmbridge/0.1.23/allshared-kmmbridge-0.1.23.zip"
-let remoteKotlinChecksum = "b87e21f427d4c8cf97084772047e9cfb5ab95cb9dc5d56471c01c2047d4c7fef"
-
+let remoteKotlinUrl = "https://maven.pkg.github.com/9folders-inchan/kmp_sendbox/com/9folders/kmp/sendbox/allshared-kmmbridge/0.1.27/allshared-kmmbridge-0.1.27.zip"
+let remoteKotlinChecksum = "8f45bc60e5563b91d79c3536057b027f04e2aca60f87b62b61bf32b7c8160646"
 let packageName = "allshared"
-
-let package = Package(
-    name: packageName,
-    platforms: [
-        .iOS(.v13)
-    ],
-    products: [
-        .library(
-            name: packageName,
-            targets: [packageName]
-        )
-    ],
-    dependencies: [
-        .package(url: "https://github.com/Alamofire/Alamofire", .upToNextMajor(from: "5.0.0"))
-    ],
-    targets: [
-        .binaryTarget(
-            name: packageName,
-            path: "./allshared/build/XCFrameworks/debug/\(packageName).xcframework"
-        )
-    ]
-
-)
+// END KMMBRIDGE BLOCK
